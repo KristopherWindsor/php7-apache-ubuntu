@@ -9,7 +9,8 @@ RUN apt-get install -y mysql-client libmysqlclient-dev && docker-php-ext-install
 RUN docker-php-ext-install pdo pdo_mysql
 
 # GD for image processing
-RUN libfreetype6-dev \
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng12-dev \
